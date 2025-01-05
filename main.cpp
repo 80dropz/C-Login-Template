@@ -52,7 +52,6 @@ int main()
         if (!authenticated)
         {
             
-   
             // USERNAME FUNCTION AND STYLING
             SetCursorPos(ImVec2((WindowX / 2) - 75, WindowY / 2));
             SetNextItemWidth(150.0f);
@@ -76,6 +75,12 @@ int main()
                 Authentication();
             }
         }
+        else
+        {
+            Text("Username: %s", InputUsername);
+            Text("Password: %s", InputPassword);
+        }
+
 
 
         ImGui::Render();
@@ -104,5 +109,5 @@ void Authentication()
     std::cout << "This works" << std::endl;
     std::cout << "Username: " << InputUsername << std::endl;
     std::cout << "Password: " << InputPassword << std::endl;
-
+    authenticated = true;
 }
